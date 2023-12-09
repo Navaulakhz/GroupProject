@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="javascript.js"></script>
+<title>Dashboard</title>
+<style>
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh; /* Use 100% of the viewport height */
+  }
+
+  .navbar {
+    background-color: #23395d; /* Adjusted the color to match the image */
+    color: white;
+    width: 250px; /* Fixed width for the sidebar */
+    padding: 10px;
+    overflow: auto; /* Scrollable if the content is too long */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    text-align: center;
+    margin-top: 0.5rem; /* Spacing below the logo */
+  }
+
+  .navbar a {
+    color: #8fa5c7; /* Lighter text color for links */
+    text-decoration: none;
+    line-height: 2.5; /* Spacing for readability */
+    display: flex; /* Align icons with text */
+    align-items: center;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  .navbar a:hover {
+    color: white; /* White text on hover */
+    background-color: #1a2a40; /* Darker background on hover */
+  }
+
+  .navbar img {
+    width: 20px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between icon and text */
+  }
+
+  .dashboard {
+    flex-grow: 1; /* Take up the remaining width */
+    background-color: #f4f7fa;
+    color: #1d4d9c;
+    padding: 20px;
+    overflow: auto; /* Scrollable if the content is too long */
+  }
+
+  /* Example styles for the dashboard content */
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+/* [Existing CSS styles] */
+
+/* Adjusted navbar styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the bottom section to the bottom */
+    
+   
+}
+
+.nav-links {
+    /* Styles for the main navigation links */
+  
+}
+
+.nav-bottom {
+    /* Styles for the bottom navigation section */
+}
+
+/* [Rest of your CSS] */
+
+  /* More custom styles can be added here to match the design from your image */
+  /* Basic Reset */
+
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+
+.dashboard {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.dashboard-header {
+    /* Styles for the dashboard header */
+}
+
+.account-overview, .recent-transactions, .quick-actions {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    /* Add more styling as needed */
+}
+
+/* Add more specific styles for each section */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  /* Additional styling */
+}
+
+.dashboard {
+  padding: 20px;
+  width: calc(100% - 250px); /* Assuming the sidebar is 250px wide */
+  float: right;
+}
+
+.account-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 48%; /* Two cards side by side */
+  padding: 20px;
+  /* Additional styling for cards */
+}
+
+.payments, .recent-activities {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  /* Additional styling */
+}
+/* Payments Section */
+.payments-section,
+.recent-activities-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.payments-section h2,
+.recent-activities-section h2 {
+  color: #3057d5;
+  margin-bottom: 20px;
+}
+
+.payment-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-list, .activities-list {
+  list-style: none;
+}
+
+.payment-list li, .activities-list li {
+  padding: 10px;
+  border-bottom: 1px solid #e6e9f0;
+}
+
+.payment-list li:last-child, .activities-list li:last-child {
+  border-bottom: none;
+}
+
+/* Recent Activities Section */
+.activities-list {
+  /* If there are specific styles for the activities list, add them here */
+}
+
+/* Add other styles for buttons, links, etc. */
+.dashboard {
+  /* Existing styles for the dashboard content */
+}
+
+.dashboard-lower {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payments-section,
+.recent-activities-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 48%; /* Adjust the width as needed, ensuring both sections fit side by side */
+}
+
+.payments-section h2,
+.recent-activities-section h2 {
+  color: #3057d5;
+  margin-bottom: 20px;
+}
+
+.payment-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment-list, .activities-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.payment-list li, .activities-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e9f0;
+}
+
+.payment-list li:last-child, .activities-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive adjustments if necessary */
+@media (max-width: 768px) {
+  .dashboard-lower {
+    flex-direction: column;
+  }
+
+  .payments-section,
+  .recent-activities-section {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+#Logo{
+    width: 100%;
+}
+/* Additional styles for progress bars and stats */
+.progress-bar {
+    background-color: #e6e9f0;
+    border-radius: 5px;
+    /* Add a nested div for the filled part with inline style for width percentage */
+}
+
+.progress-bar > div {
+    background-color: #3057d5;
+    height: 10px; /* Adjust as needed */
+    border-radius: 5px;
+}
+
+.payment-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+/* Styles for the payments and activities lists */
+.payment-list, .activities-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payment-list li, .activities-list li {
+    padding: 10px;
+    border-bottom: 1px solid #e6e9f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-list li:last-child, .activities-list li:last-child {
+    border-bottom: none;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed for your layout */
+    padding: 20px;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px; /* Adjust based on your layout */
+    margin-bottom: 20px; /* Spacing between cards */
+}
+
+.card h2 {
+    color:white;
+    margin-bottom: 2rem;
+}
+
+.card-details .card-number,
+.card-details .card-holder-name,
+.card-details .card-expiry {
+    margin-bottom: 8px;
+    color: white;
+    
+}
+.card-number{
+    padding-bottom: 2rem;
+}
+.card-holder-name{
+    float: inline-start;
+}
+.card-expiry{
+    float: inline-end;
+}
+
+.debit-card {
+    background-color: #23395d;
+    width: 25%;
+}
+
+.credit-card {
+    /* Additional styles if needed */
+   background-color: #8fa5c7;
+    width: 25%;
+}
+
+.card-container1 {
+    display: flex;
+    justify-content: center; /* Center cards in the container */
+    gap: 25%; /* Spacing between cards */
+    margin-bottom: 2rem;
+   
+}
+
+.card-limit {
+    background-color: #FFFFFF;
+    border-radius: 45px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 25%; /* Set a fixed width for each card */
+    padding: 10px;
+    float: inline-start;
+   height: 9.0625rem;
+   /* Needed for absolute positioning of limit text */
+   
+}
+.h{
+   
+}
+.card-limit h2 {
+    color: #050506;
+    margin-bottom: 16px;
+    margin-left: 45%;
+   
+}
+
+.progress-bar {
+   
+   
+    background-color: white;
+    margin-right: 25%;
+    height: 15%;
+    
+   
+}
+
+.progress-circle {
+    width: 45%;
+   margin-top: 1rem;
+    background-color: white;
+    color: #1a2a40;
+    height: 5.39rem;
+    
+   
+}
+
+.circle-bg,
+.circle {
+    fill: none;
+    stroke-linecap: round;
+    float: inline-start;
+    height: 15%;
+}
+
+.limit-text {
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8em;
+    color: #0a0a0b;
+    float: inline-end;
+    margin-left: 65%;
+}
+.payments-section {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    font-size: 14px;
+  }
+  .payments-header {
+    background-color: #f7f9fb;
+    color: #000;
+    padding: 20px;
+    font-size: 18px;
+  }
+  .payments-header h2{
+    float: inline-start;
+    color: #1f509f;
+  }
+  .payments-header p{
+       margin-left: 45%;
+       margin-top: 0.5rem;
+  }
+  .payments-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .payments-table th,
+  .payments-table td {
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eceff1;
+  }
+  .payments-table th {
+    background-color: #ffffff;
+    color: #274e8b;
+  }
+  .payments-table .pay-now {
+    color: #2c4671;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .payments-table .pay-now:hover {
+    text-decoration: underline;
+  }
+  .status-badge {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    text-align: center;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .awaiting {
+    background-color: #fbbc05;
+  }
+  .in-progress {
+    background-color: #34a853;
+  }
+  .completed {
+    background-color: #4285f4;
+  }
+  .cancelled {
+    background-color: #ea4335;
+  }
+  .payments-status-summary {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  .status-item {
+    text-align: center;
+  }
+  .status-item h4 {
+    margin: 5px 0;
+    color: #6ba4eb;
+    font-size: 16px;
+    background-color: white;
+  }
+  .status-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #5b72b4;
+  }
+  .checkbox-container {
+    text-align: center;
+  }
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .checkbox-header, .checkbox-cell {
+    text-align: center;
+  }
+  .recent-activities {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin: 20px;
+    padding: 20px;
+    
+  }
+  .recent-activities-header {
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  .activities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .activities-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eceff1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .activity {
+    font-size: 14px;
+  }
+  .activity-amount {
+    font-weight: bold;
+    margin-left: 5px;
+   
+  }
+  .activity-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    /* Icons should be defined here, for example as background images */
+  }
+  .pay-now-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    height: 50px;
+    margin-top: 25%;
+  }
+  
+  .pay-now-button {
+    background-color: #091c39; /* Example color: blue */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  
+  /* You might want to add :hover effects for the buttons */
+  .pay-now-button:hover {
+    background-color: #031f4b; /* Darker blue */
+  }
+  @media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .dashboard {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-container,
+  .card-container1 {
+    flex-direction: column;
+  }
+
+  .card,
+  .card-limit {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card-details {
+    text-align: center;
+  }
+
+  .pay-now-buttons {
+    flex-direction: column;
+  }
+
+  .pay-now-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .payments-section,
+  .recent-activities-section {
+    margin: 10px 0;
+  }
+
+  .status-item h4,
+  .status-item p,
+  .payments-table th,
+  .payments-table td,
+  .activity,
+  .activity-amount {
+    font-size: smaller; /* Adjust font size for readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: none; /* Optionally hide the navbar on very small screens */
+  }
+
+  .logo,
+  .nav-links,
+  .nav-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .logo img {
+    width: 50px; /* Adjust logo size on smaller screens */
+  }
+
+  .nav-links a,
+  .nav-bottom a {
+    font-size: 12px; /* Adjust link font size for smaller screens */
+  }
+  
+  .recent-activities-header span,
+  .recent-activities-header a {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+  
+  /* Adjust the progress bar for smaller screens */
+  .progress-circle {
+    width: 30px; /* Smaller progress circles */
+    height: 30px;
+  }
+  
+  /* Adjust the spacing around elements */
+  .payments-status-summary, .status-item, .activity-list li, .activity {
+    margin: 5px 0;
+  }
+}
+/* ... (Other existing styles) ... */
+
+/* Card Limit Sections */
+.card-container1 {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed for your layout */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  gap: 20px; /* Spacing between cards */
+}
+
+.card-limit {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px; /* Spacing between cards */
+  position: relative; /* For absolute positioning of child elements */
+  text-align: center; /* Center the text for smaller screens */
+  flex: 1; /* Flex grow to fill available space */
+  min-width: 250px; /* Minimum width of the card */
+}
+
+.card-limit h2 {
+  color: #23395d;
+  margin-bottom: 1rem;
+}
+
+
+
+.progress-circle {
+  display: block;
+  margin: 0 auto; /* Center SVG horizontally */
+  max-width: 100px; /* Set a max-width for the SVG */
+}
+
+/* Responsive adjustments for card limits */
+@media (max-width: 768px) {
+  .card-limit {
+    margin-bottom: 20px;
+    min-width: 0; /* Allow the card to shrink on smaller screens */
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .progress-circle {
+    width: 50px; /* Smaller progress circles on smaller screens */
+  }
+  
+  .limit-text {
+    font-size: 0.8rem; /* Smaller font size for the text */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container1 {
+    gap: 10px;
+  }
+  
+  .card-limit {
+    padding: 10px;
+  }
+  
+  .card-limit h2 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ... (Any other responsive adjustments you need) ... */
+/* Other styles remain the same */
+
+/* Responsive adjustments for payments table */
+@media (max-width: 768px) {
+  /* Convert table to block layout */
+  .payments-table, .payments-table thead, .payments-table tbody, .payments-table th, .payments-table td, .payments-table tr { 
+    display: block; 
+  }
+
+  /* Hide table headers */
+  .payments-table thead tr { 
+    display: none;
+  }
+
+  /* Style each cell */
+  .payments-table td { 
+    /* Make td look like a card */
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    padding-left: 50%; 
+    margin-bottom: 10px;
+  }
+
+  /* Position content in cells */
+  .payments-table td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  /* Label the data */
+  .payments-table td:nth-of-type(1):before { content: "Bills"; }
+  .payments-table td:nth-of-type(2):before { content: "Account"; }
+  .payments-table td:nth-of-type(3):before { content: "Due Date"; }
+  .payments-table td:nth-of-type(4):before { content: "Amount"; }
+  .payments-table td:nth-of-type(5):before { content: "Status"; }
+  .payments-table td:nth-of-type(6):before { content: "Action"; }
+
+  /* Adjust layout of status badges and buttons */
+  .status-badge, .pay-now-button {
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* Make sure checkbox column does not interfere */
+  .checkbox-cell input[type="checkbox"] {
+    margin-right: 0;
+  }
+  .checkbox-cell, .checkbox-header {
+    display: none; /* Hide checkboxes on small screens */
+  }
+}
+
+/* Further adjust for very small screens */
+@media (max-width: 480px) {
+  .payments-table td:before {
+    /* Adjust sizes for smaller screens */
+    top: 3px;
+    left: 3px;
+    font-size: 0.8em;
+  }
+}
+
+/* Add any additional responsive adjustments as needed */
+/* Ensure your table styles are defined above the media query */
+
+/* Responsive adjustments for tablet screens */
+@media (max-width: 1024px) {
+  /* Stack the table headers and cells vertically */
+  .payments-table, .payments-table thead, .payments-table tbody, .payments-table th, .payments-table td, .payments-table tr {
+    display: block;
+  }
+
+  /* Hide the table headers on smaller screens */
+  .payments-table thead tr {
+    display: none;
+  }
+
+  /* Make each table data cell look like a row */
+  .payments-table tr {
+    margin-bottom: 15px;
+  }
+
+  .payments-table td {
+    /* Make each cell full width */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    /* Vertical stacking */
+    flex-direction: column;
+    text-align: right;
+  }
+
+  /* Add labels to each cell based on their column header */
+  .payments-table td:before {
+    content: attr(data-label);
+    flex-basis: 100%;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  /* Adjustments to the Pay Now buttons and status badges */
+  .status-badge, .pay-now {
+    display: inline-block;
+    margin-top: 5px;
+  }
+
+  /* Hide checkbox on smaller screens */
+  .checkbox-cell, .checkbox-header {
+    display: none;
+  }
+}
+
+/* Additional adjustments for very small screens like mobile devices */
+@media (max-width: 768px) {
+  /* Further adjustments to font size and padding if needed */
+  .payments-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <!-- Logo placeholder -->
+      <div class="logo">
+        <img src="Logo_Transparent_White.png" id="Logo"  alt="Crest Bank Corp Logo" style="max-width: 100%;"> <!-- Replace with your logo image path -->
+      </div>
+      <div class="nav-links">
+      <!-- Navigation links with custom icon images -->
+      <a href="Index.html"><img src="home-alt-2-regular-24.png" alt="Overview"> Overview</a>
+      <a href="#"><img src="credit-card-regular-24.png" alt="Accounts"> Accounts</a>
+      <a href="transfer.html"><img src="transfer-regular-24.png" alt="Transfers"> Transfers</a>
+      <a href="transaction.html"><img src="money-withdraw-regular-24.png" alt="Transactions"> Transactions</a>
+      <a href="investment.html"><img src="report-solid-24.png" alt="Investments"> Investments</a>
+      <a href="chat.html"><img src="face-solid-24.png" alt="Contacts"> Contacts</a>
+     
+      </div>
+      <div class="nav-bottom">
+        <!-- Bottom Navigation Links -->
+        <a href="#"><img src="cog-solid-24.png" alt="Settings"> Settings</a>
+        <a href="#"><img src="user-circle-solid-24.png" alt="Account"> Account</a>
+    </div>
+    </div>
+    
+    <main class="dashboard">
+        <h1>Dashboard</h1>
+        <div class="card-container">
+            <!-- Debit Card Section -->
+            <div class="card debit-card">
+                <h2>Debit Card</h2>
+                <div class="card-details">
+                    <div class="card-number">1684 **** **** ****</div>
+                    <div class="card-holder-name">John Doe</div>
+                    <div class="card-expiry">02/27</div>
+                </div>
+            </div>
+        
+            <!-- Credit Card Section -->
+            <div class="card credit-card">
+                <h2>Credit Card</h2>
+                <div class="card-details">
+                    <div class="card-number">1739 **** **** ****</div>
+                    <div class="card-holder-name">John Doe</div>
+                    <div class="card-expiry">08/25</div>
+                </div>
+            </div>
+        </div>
+        
+       <!-- Limit Sections Only -->
+
+       <div class="card-container1">
+        <!-- Debit Card Limit -->
+        <div class="card-limit debit-limit">
+          <div class="progress-bar">
+            <svg class="progress-circle" viewBox="0 0 36 36">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" stroke="#e6e9f0" stroke-width="4"/>
+                <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" stroke="#3057D5" stroke-width="4" stroke-dasharray="70, 100" stroke-dashoffset="35"/>
+            </svg>
+            
+        </div>
+            <h2 class="h">Debit Card</h2>
+            
+            <p class="limit-text">1000 / 5000 CAD</p>
+        </div>
+    
+        <!-- Credit Card Limit -->
+        <div class="card-limit credit-limit">
+          <div class="progress-bar">
+            <svg class="progress-circle" viewBox="0 0 36 36">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" stroke="#e6e9f0" stroke-width="4"/>
+                <path class="circle" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" stroke="#3057D5" stroke-width="4" stroke-dasharray="95, 100" stroke-dashoffset="5"/>
+            </svg>
+            
+        </div>
+            <h2 class="h">Credit Card</h2>
+           
+            <p class="limit-text">1437 / 1500 CAD</p>
+        </div>
+    </div>
+    
+
+    <div class="payments-header"><h2>Payments</h2>
+    <p>In the last 30 days</p></div>
+        <div class="dashboard-lower">
+            <!-- Payments Section -->
+
+            
+            <div class="payments-section">
+              <div class="payments-status-summary">
+    <div class="status-item">
+      <h4>Awaiting</h4>
+      <p>6</p>
+    </div>
+    <div class="status-item">
+      <h4>In Progress</h4>
+      <p>3</p>
+    </div>
+    <div class="status-item">
+      <h4>Completed</h4>
+      <p>16</p>
+    </div>
+    <div class="status-item">
+      <h4>Canceled</h4>
+      <p>4</p>
+    </div>
+  </div>
+  <table class="payments-table">
+    <!-- Table Head -->
+    <thead>
+      <tr>
+        <th class="checkbox-header"><input type="checkbox" id="select-all"></th>
+        <th>Bills</th>
+        <th>Account</th>
+        <th>Due Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+                <tbody>
+                  <tr>
+                    <td class="checkbox-cell"><input type="checkbox" class="bill-checkbox"></td>
+                    <td>Lease Invoice #12345678</td>
+                    <td>008876577</td>
+                    <td>Nov 26, 2023</td>
+                    <td>$3759.99</td>
+                    <td><span class="status-badge awaiting">Awaiting</span></td>
+                    <td><a href="#" class="pay-now">View PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td class="checkbox-cell"><input type="checkbox" class="bill-checkbox"></td>
+        <td>Internet Bill #87654321</td>
+                    <td>008765432</td>
+                    <td>Nov 16, 2023</td>
+                    <td>$185.93</td>
+                    <td><span class="status-badge in-progress">In Progress</span></td>
+                    <td><a href="#" class="pay-now">Pay Now</a></td>
+                  </tr>
+                  <tr>
+                    <td>Hydro Bill #23456789</td>
+                    <td>008765878</td>
+                    <td>Dec 23, 2023</td>
+                    <td>$500.00</td>
+                    <td><span class="status-badge completed">Completed</span></td>
+                    <td><a href="#" class="pay-now">View PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td>Mortgage #98765432</td>
+                    <td>008765448</td>
+                    <td>Nov 30, 2023</td>
+                    <td>$1998.00</td>
+                    <td><span class="status-badge cancelled">Past Due</span></td>
+                    <td><a href="#" class="pay-now">Pay Now</a></td>
+                  </tr>
+                  <!-- Repeat the pattern for more entries -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="pay-now-buttons">
+              <button class="pay-now-button">Pay Now</button>
+              <button class="pay-now-button">Pay All</button>
+            </div>
+        
+            <!-- Recent Activities Section -->
+            <div class="recent-activities">
+              <div class="recent-activities-header">
+                <span style="color: #000;">Recent Activities</span>
+                <a href="#" style="text-decoration: none; font-size: 12pt; background-color: #5d94ec; color: #ffffff; border-radius: 25px; ">View a Report</a>
+              </div>
+              <ul class="activities-list">
+                <li>
+                  <div class="activity">
+                    <div>Today</div>
+                    <br>
+                    <span>To Mary Smith</span>
+                    <span class="activity-amount">2000.00 CAD</span>
+                  </div>
+                 
+                </li>
+                <li>
+                  <div class="activity">
+                    <div>Today</div>
+                    <br>
+                    <span>Starbucks</span>
+                    <span class="activity-amount">15.37 CAD</span>
+                  </div>
+                 
+                </li>
+                <li>
+                  <div class="activity">
+                    <div>Yesterday</div>
+                    <br>
+                    <span>Metro</span>
+                    <span class="activity-amount">250.00 CAD</span>
+                  </div>
+                 
+                </li>
+                <li>
+                  <div class="activity">
+                    <div>Yesterday</div>
+                    <br>
+                    <span>Sent to Credit Transfer</span>
+                    <span class="activity-amount">1023.00 CAD</span>
+                  </div>
+                 
+                </li>
+                <li>
+                  <div class="activity">
+                    <div>Yesterday</div>
+                    <br>
+                    <span>To Derek Fisher</span>
+                    <span class="activity-amount">138.90 CAD</span>
+                  </div>
+                 
+                </li>
+              </ul>
+            </div>
+            </div>
+      </main>
+      
+  
+  </div>
+</body>
+</html>

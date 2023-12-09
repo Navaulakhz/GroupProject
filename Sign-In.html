@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Crest Bank Corp</title>
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="Sign-In-Style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="Logo_Transparent.png" alt="Crest Bank Corp Logo" class="logo">
+            <div class="header-buttons">
+                <button class="button" id="login">Login</button>
+                <button class="button" id="sign-up">Sign Up</button>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="sign-in-section">
+                <h1>Crest Bank Corp Online Banking</h1>
+                <p class="tagline">Sign On Using Your Crest Bank Card Number</p>
+                <form id="sign-in-form" onsubmit="handleSignIn(event)">
+                    <form id="sign-in-form">
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="Card Number" pattern="\d{16}" title="Card number must be 16 digits" required>
+                        <input type="password" id="password" name="password" placeholder="Password" minlength="8" required>
+                        <label for="show-password" class="show-password">
+                            <input type="checkbox" id="show-password"> Show Password
+                        </label>
+                        <div class="form-footer">
+                            <a href="#" class="link">Reset Password</a>
+                            <button type="submit" class="button">Sign On</button>
+                        </div>
+                      </form>
+                      
+                </form>
+                <button class="button" id="register">Register Now</button>
+            </div>
+            <div class="illustration-section">
+                <img src="Avatar Bank Illustration.jpg" alt="Illustration describing online banking" id="ill">
+            </div>
+        </main>
+    </div>
+</body>
+</html>

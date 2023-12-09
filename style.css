@@ -1,0 +1,44 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+  
+  /* Navigation Bar Styles */
+  .navbar {
+    background-color: #3057d5;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Container for sidebar and dashboard */
+  .container {
+    display: flex;
+    height: calc(100vh - 40px); /* Adjust based on the actual height of your navbar */
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Dashboard styles */
+  .dashboard {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* You would continue to add detailed styling for .sidebar, .dashboard and their child elements here */
+  

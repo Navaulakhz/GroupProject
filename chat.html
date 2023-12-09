@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crest Bank Corp Chat Interface</title>
+    <link rel="stylesheet" href="cstyle.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h1 class="logo">Crest Bank Corp</h1>
+                <button class="start-chat-btn">New Chat</button>
+            </header>
+            <nav class="nav-menu">
+                <ul class="menu-list">
+                    <li class="menu-item active"><span class="icon"></span>How to Invest</li>
+                    <li class="menu-item"><span class="icon"></span>Bill Payee</li>
+                    <li class="menu-item"><span class="icon"></span>Card Payee Error</li>
+                    <li class="menu-item"><span class="icon"></span>Credit Card Issue</li>
+                    <li class="menu-item"><span class="icon"></span>Set Saving Account</li>
+                    <li class="menu-item"><span class="icon"></span>Investing Tips</li>
+                    <li class="menu-item"><span class="icon"></span>Add Contacts</li>
+                    <li class="menu-item"><span class="icon"></span>Bitcoin Questions</li>
+                </ul>
+            </nav>
+            <footer class="sidebar-footer">
+                <div class="settings"><span class="icon"></span>Settings</div>
+                <div class="account"><span class="icon"></span>Account</div>
+            </footer>
+        </aside>
+        <!-- Chat Container -->
+        <main class="chat-container">
+            <!-- Chat Interface Header -->
+            <header class="chat-header">
+                <div class="chat-title">Chat With Us</div>
+                <div class="chat-controls">
+                    <button class="control-btn" id="settings-btn"></button>
+                    <button class="control-btn" id="logout-btn"></button>
+                </div>
+            </header>
+            <!-- Chat Messages Section -->
+            <section class="chat-messages">
+                <div class="message received">Good Morning1!</div>
+                <div class="message sent">How can I help you today?</div>
+                <!-- More messages -->
+            </section>
+            <!-- Chat Input Section -->
+            <section class="chat-input-section">
+                <div class="input-group">
+                    <input type="text" placeholder="Start Typing..." id="chat-input" />
+                    <button class="send-btn">Send</button>
+                </div>
+                <div class="transfer-actions">
+                    <!-- Transfer buttons -->
+                    <button class="transfer-btn">Send Transfer Funds</button>
+                    <button class="transfer-btn">Send Global Transfers</button>
+                    <button class="transfer-btn">Transfer Between Accounts</button>
+                    <button class="transfer-btn">RRSP Transfers</button>
+                    <button class="transfer-btn">Wire Transfers</button>
+                    <button class="transfer-btn">TFSA Transfers</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

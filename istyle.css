@@ -1,0 +1,148 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 250px;
+    background-color: #082032;
+    color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+  
+  .sidebar .logo {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #334756;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background-color: #334756;
+    border-left: 4px solid #00ADB5;
+    padding-left: 16px;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+    background: #f4f7fa;
+  }
+  
+  .card {
+    background: #334756;
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Top Charts Section */
+  .top-charts {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .top-charts > div {
+    flex: 1;
+  }
+  
+  /* Bottom Sections */
+  .bottom-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .bottom-sections > div {
+    width: calc(50% - 10px);
+  }
+  
+  .bottom-sections > .my-investment {
+    flex-grow: 3;
+  }
+  
+  .bottom-sections > .trending {
+    flex-grow: 1;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #556172;
+    color: white;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    .top-charts, .bottom-sections {
+      flex-direction: column;
+    }
+  
+    .top-charts > div, .bottom-sections > div {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    .main-content {
+      margin-left: 0;
+    }
+  
+    .sidebar ul li a {
+      padding-left: 20px; /* Reset padding for mobile view */
+    }
+  }
+  

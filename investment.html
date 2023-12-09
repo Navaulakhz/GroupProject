@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Dashboard</title>
+<link rel="stylesheet" href="istyle.css">
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Placeholder for the logo -->
+        <div class="logo">
+          <img src="Logo_Transparent_White.png" alt="Crest Bank Corp">
+        </div>
+        
+        <!-- Navigation -->
+        <ul class="nav">
+          <li><a href="Index.html"><img src="home-alt-2-regular-24.png" alt="Overview">Overview</a></li>
+          <li><a href="#accounts"><img src="credit-card-front-regular-24.png" alt="Accounts">Accounts</a></li>
+          <li><a href="transfer.html"><img src="transfer-regular-24.png" alt="Transfers">Transfers</a></li>
+          <li><a href="transaction.html"><img src="money-withdraw-regular-24.png" alt="Transactions">Transactions</a></li>
+          <li><a href="investment.html" class="active"><img src="report-solid-24.png" alt="Investments">Investments</a></li>
+          <li><a href="chat.html"><img src="face-solid-24.png" alt="Contacts">Contacts</a></li>
+          <li><a href="#settings"><img src="cog-solid-24.png" alt="Settings">Settings</a></li>
+          <li><a href="#account"><img src="user-circle-solid-24.png" alt="Account">Account</a></li>
+        </ul>
+      </div>
+
+<div class="main-content">
+  <!-- Top Charts Section -->
+  <div class="top-charts">
+    <div class="card chart-card">
+      <h2>Yearly Total Investments</h2>
+      <div id="yearly-investments-chart"><img src="i1.png" width="50%"></div>
+    </div>
+    <div class="card chart-card">
+      <h2>Yearly Total Revenue</h2>
+      <div id="yearly-revenue-chart"><img src="i2.png" width="50%"></div>
+    </div>
+  </div>
+  
+  <!-- Bottom Sections -->
+  <div class="bottom-sections">
+    <div class="card my-investment">
+      <h2>My Investment</h2>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Investment Value</th>
+          <th>Return Value</th>
+        </tr>
+        <tr>
+          <td>Alpha Corp</td>
+          <td>$1,000</td>
+          <td>+5%</td>
+        </tr>
+        <tr>
+          <td>Beta Ltd.</td>
+          <td>$2,000</td>
+          <td>+3%</td>
+        </tr>
+        <tr><td>Gamma Inc</td><td>$1,500</td><td>+4%</td></tr>
+            <tr><td>Delta Co</td><td>$2,500</td><td>+2%</td></tr>
+            <tr><td>Epsilon LLC</td><td>$3,000</td><td>+6%</td></tr>
+            <tr><td>Zeta Ltd</td><td>$1,200</td><td>-1%</td></tr>
+            <tr><td>Eta Corp</td><td>$2,200</td><td>+2.5%</td></tr>
+            <tr><td>Theta Inc</td><td>$1,800</td><td>+3.2%</td></tr>
+            <tr><td>Iota LLC</td><td>$2,600</td><td>+1.5%</td></tr>
+            <tr><td>Kappa Co</td><td>$1,100</td><td>+4.8%</td></tr>
+            <tr><td>Lambda Ltd</td><td>$2,300</td><td>+3.6%</td></tr>
+            <tr><td>Mu Inc</td><td>$1,700</td><td>+5.1%</td></tr>
+      </table>
+    </div>
+
+    <div class="card trending">
+        <h2>Trending</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Return</th>
+            </tr>
+            <tr>
+                <td>Alpha Corp</td>
+                <td>$120</td>
+                <td>+4%</td>
+            </tr>
+            <tr>
+                <td>Beta Ltd.</td>
+                <td>$80</td>
+                <td>-1%</td>
+            </tr>
+            <!-- Additional Entries -->
+            <tr><td>Gamma Inc</td><td>$150</td><td>+2.5%</td></tr>
+            <tr><td>Delta Co</td><td>$90</td><td>+1%</td></tr>
+            <tr><td>Epsilon LLC</td><td>$200</td><td>+3%</td></tr>
+            <tr><td>Zeta Ltd</td><td>$60</td><td>-0.5%</td></tr>
+            <tr><td>Eta Corp</td><td>$110</td><td>+2%</td></tr>
+            <tr><td>Theta Inc</td><td>$95</td><td>+1.8%</td></tr>
+            <tr><td>Iota LLC</td><td>$140</td><td>+2.2%</td></tr>
+            <tr><td>Kappa Co</td><td>$85</td><td>+0.8%</td></tr>
+            <tr><td>Lambda Ltd</td><td>$130</td><td>+3.5%</td></tr>
+            <tr><td>Mu Inc</td><td>$75</td><td>-1.2%</td></tr>
+        </table>
+    </div>
+    
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

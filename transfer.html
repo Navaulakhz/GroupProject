@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="javascript.js"></script>
+<title>Transfer</title>
+<style>
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh; /* Use 100% of the viewport height */
+  }
+
+  .navbar {
+    background-color: #23395d; /* Adjusted the color to match the image */
+    color: white;
+    width: 250px; /* Fixed width for the sidebar */
+    padding: 10px;
+    overflow: auto; /* Scrollable if the content is too long */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    text-align: center;
+    margin-top: 0.5rem; /* Spacing below the logo */
+  }
+
+  .navbar a {
+    color: #8fa5c7; /* Lighter text color for links */
+    text-decoration: none;
+    line-height: 2.5; /* Spacing for readability */
+    display: flex; /* Align icons with text */
+    align-items: center;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  .navbar a:hover {
+    color: white; /* White text on hover */
+    background-color: #1a2a40; /* Darker background on hover */
+  }
+
+  .navbar img {
+    width: 20px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between icon and text */
+  }
+
+  .dashboard {
+    flex-grow: 1; /* Take up the remaining width */
+    background-color: #f4f7fa;
+    color: #1d4d9c;
+    padding: 20px;
+    overflow: auto; /* Scrollable if the content is too long */
+  }
+
+  /* Example styles for the dashboard content */
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+/* [Existing CSS styles] */
+
+/* Adjusted navbar styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push the bottom section to the bottom */
+    
+   
+}
+
+.nav-links {
+    /* Styles for the main navigation links */
+  
+}
+
+.nav-bottom {
+    /* Styles for the bottom navigation section */
+}
+
+/* [Rest of your CSS] */
+
+  /* More custom styles can be added here to match the design from your image */
+  /* Basic Reset */
+
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+#Logo{
+    width: 100%;
+}
+.transfer-section {
+  font-family: 'Arial', sans-serif;
+  background-color: #273f95;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.transfer-section h2 {
+  color: #ffffff;
+}
+
+.account-info, .transfer-to {
+  background-color: #fff;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.account-info p, .transfer-to form {
+  margin-top: 10px;
+}
+
+.transfer-to form input[type="submit"] {
+  background-color: #263482;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.transfer-to form input[type="submit"]:hover {
+  background-color: #005f73;
+}
+
+.transfer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.transfer-section, .transfer-to-section {
+  flex: 1; /* Each section will take up half of the container */
+  margin: 0 10px; /* Spacing between the two sections */
+  background-color: #2e3681;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Apply other styles as before */
+.transfer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #485bb9;
+  font-family: 'Arial', sans-serif;
+}
+
+.transfer-section, .transfer-to-section {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #315296;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transfer-section h2, .transfer-to-section h2 {
+  color: #2b2776;
+  margin-bottom: 20px;
+}
+
+.account-info label,
+.transfer-to-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.account-info select,
+.transfer-to-section input[type="text"],
+.transfer-to-section input[type="number"],
+.transfer-to-section input[type="date"],
+.transfer-to-section input[type="email"] {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+
+}
+
+.transfer-to-section input[type="submit"] {
+  background-color: #25239e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.transfer-to-section input[type="submit"]:hover {
+  background-color: #143a88;
+}
+
+.balance-info, .iban-info {
+  background-color: #f4f4f7;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.saved-beneficiaries {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.saved-beneficiaries h3 {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.balance-amount, .iban-number, .account-owner {
+  font-weight: bold;
+}
+.transfer-container {
+  display: flex;
+  padding: 10px;
+  background-color: #eef2f7;
+  font-family: 'Arial', sans-serif;
+  gap: 20px; /* This adds space between your flex items */
+}
+
+.transfer-section, .transfer-to-section {
+  flex: 1; /* Each child will take up an equal amount of space */
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+ 
+}
+
+/* Continue with previous styles... */
+
+/* Ensure full width inputs and button */
+.transfer-section select,
+.transfer-to-section input,
+.transfer-to-section button {
+  width: 100%;
+  /* Other styles remain the same */
+}
+
+/* Remove margin from the sections since they will now be full width */
+.transfer-section, .transfer-to-section {
+  margin: 0;
+}
+
+/* Additional styles to ensure full coverage */
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* If you want the transfer-container to be the full width of the viewport and not just its parent */
+.transfer-container {
+  width: 100vw;
+  box-sizing: border-box; /* This ensures padding does not add to the width */
+}
+
+/* Handle overflow on x-axis for smaller screens */
+body {
+  overflow-x: hidden;
+}
+/* ... existing styles ... */
+
+.recent-activities-section {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activities-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activities-table th,
+.activities-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.activities-table th {
+  background-color: #f4f4f7;
+}
+
+/* Add styles for alternating row colors if desired */
+.activities-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.activities-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* If you want the recent activities to be responsive */
+@media (max-width: 768px) {
+  .transfer-container {
+    flex-direction: column;
+  }
+
+  .recent-activities-section {
+    width: 100%;
+    box-sizing: border-box; /* This ensures padding does not add to the width */
+  }
+
+  .activities-table {
+    display: block;
+    overflow-x: auto; /* Allows table to be scrollable on small screens */
+  }
+}
+
+.status-completed {
+  color: green;
+}
+
+.status-pending {
+  color: orange;
+}
+
+/* ... existing styles ... */
+.transfer-container {
+  display: flex;
+  flex-direction: column; /* This will stack children vertically */
+  padding: 20px;
+  background-color: #eef2f7;
+  font-family: 'Arial', sans-serif;
+}
+
+.transfer-section, .transfer-to-section, .recent-activities-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Add space between the sections */
+}
+
+/* Ensure full width for the sections */
+.transfer-section, .transfer-to-section, .recent-activities-section {
+  width: calc(100% - 40px); /* Adjust for padding */
+  box-sizing: border-box; /* Include padding and border in the element's width */
+}
+
+/* ... other styles ... */
+
+/* Ensure the last section doesn't have a margin at the bottom */
+.transfer-container > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .transfer-container {
+    padding: 10px;
+  }
+
+  .transfer-section, .transfer-to-section, .recent-activities-section {
+    width: calc(100% - 20px); /* Adjust for padding */
+  }
+
+  .activities-table {
+    display: block;
+    overflow-x: auto; /* Allows table to be scrollable on small screens */
+  }
+}
+/* ... existing styles ... */
+
+.transfer-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  padding: 20px;
+  background-color: #eef2f7;
+  font-family: 'Arial', sans-serif;
+  gap: 20px; /* Add space between sections */
+}
+
+.transfer-section, .transfer-to-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activities-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Styles for the activities table */
+.activities-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px; /* Add space above the table */
+}
+
+.activities-table th, .activities-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.activities-table th {
+  background-color: #f4f4f7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .transfer-container {
+    padding: 10px;
+  }
+
+  .activities-table {
+    display: block;
+    overflow-x: auto; /* Allows table to be scrollable on small screens */
+  }
+}
+
+/* ... other styles ... */
+
+.transfer-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  padding: 20px;
+  background-color: #eef2f7;
+}
+
+.transfer-row {
+  display: flex; /* Enable flex layout */
+  gap: 20px; /* Space between transfer and transfer to sections */
+}
+
+.transfer-section, .transfer-to-section {
+  flex: 1; /* Each child will take up an equal amount of space */
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activities-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Space above the recent activities section */
+}
+
+/* ... other styles ... */
+
+@media (max-width: 768px) {
+  .transfer-row {
+    flex-direction: column; /* Stack transfer sections vertically on smaller screens */
+  }
+}
+.container {
+  display: flex;
+  height: 120vh; /* Full height of the viewport */
+}
+
+.navbar {
+  background-color: #23395d;
+  color: white;
+  width: 250px; /* Fixed width for the sidebar */
+  height: 120vh; /* Full height of the viewport */
+  padding: 10px;
+  overflow: auto; /* Scrollable if the content is too long */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+
+/* ... other styles ... */
+.account-info{
+    background-color: #1d4d9c;
+}
+/* Existing styles for navbar */
+@media (max-width: 480px) {
+  .navbar {
+    display: none; /* Optionally hide the navbar on very small screens */
+  }
+
+  .logo,
+  .nav-links,
+  .nav-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .logo img {
+    width: 50px; /* Adjust logo size on smaller screens */
+  }
+
+  .nav-links a,
+  .nav-bottom a {
+    font-size: 12px; /* Adjust link font size for smaller screens */
+  }
+  
+  .recent-activities-header span,
+  .recent-activities-header a {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+}
+/* Styles for the recent activities section */
+.recent-activities-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Space above the recent activities section */
+}
+
+.activities-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activities-table th, .activities-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.activities-table th {
+  background-color: #f4f4f7;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .activities-table, .activities-table thead, .activities-table tbody, .activities-table th, .activities-table td, .activities-table tr { 
+    display: block; 
+  }
+
+  .activities-table thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .activities-table tr { margin-bottom: 10px; }
+
+  .activities-table td { 
+    /* Make td behave like a "row" */
+    position: relative;
+    padding-left: 50%; 
+    text-align: right;
+  }
+
+  .activities-table td:before { 
+    /* Now like a row label */
+    position: absolute;
+    left: 10px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  /* Label the data */
+  .activities-table td:nth-of-type(1):before { content: "Date"; }
+  .activities-table td:nth-of-type(2):before { content: "Status"; }
+  .activities-table td:nth-of-type(3):before { content: "Beneficiary"; }
+  .activities-table td:nth-of-type(4):before { content: "Amount"; }
+}
+/* Styles for the recent activities section */
+.recent-activities-section {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.activities-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activities-table th, .activities-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.activities-table th {
+  background-color: #f4f4f7;
+}
+
+/* Responsive adjustments for tablet screens */
+@media (max-width: 1024px) {
+  .activities-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .activities-table, .activities-table thead, .activities-table tbody, .activities-table th, .activities-table td, .activities-table tr {
+    display: block;
+  }
+
+  .activities-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .activities-table tr {
+    margin-bottom: 1em;
+  }
+
+  .activities-table td {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  .activities-table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    content: attr(data-label);
+  }
+
+  /* Assigning labels based on column headers */
+  .activities-table td:nth-of-type(1):before { content: "Date"; }
+  .activities-table td:nth-of-type(2):before { content: "Status"; }
+  .activities-table td:nth-of-type(3):before { content: "Beneficiary"; }
+  .activities-table td:nth-of-type(4):before { content: "Amount"; }
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <!-- Logo placeholder -->
+      <div class="logo">
+        <img src="Logo_Transparent_White.png" id="Logo"  alt="Crest Bank Corp Logo" style="max-width: 100%;"> <!-- Replace with your logo image path -->
+      </div>
+      <div class="nav-links">
+      <!-- Navigation links with custom icon images -->
+      <a href="Index.html"><img src="home-alt-2-regular-24.png" alt="Overview"> Overview</a>
+      <a href="#"><img src="credit-card-regular-24.png" alt="Accounts"> Accounts</a>
+      <a href="transfer.html"><img src="transfer-regular-24.png" alt="Transfers"> Transfers</a>
+      <a href="transaction.html"><img src="money-withdraw-regular-24.png" alt="Transactions"> Transactions</a>
+      <a href="investment.html"><img src="report-solid-24.png" alt="Investments"> Investments</a>
+      <a href="chat.html"><img src="face-solid-24.png" alt="Contacts"> Contacts</a>
+     
+      </div>
+      <div class="nav-bottom">
+        <!-- Bottom Navigation Links -->
+        <a href="#"><img src="cog-solid-24.png" alt="Settings"> Settings</a>
+        <a href="#"><img src="user-circle-solid-24.png" alt="Account"> Account</a>
+    </div>
+    </div>
+    <div class="transfer-container">
+        <div class="transfer-row">
+        <!-- Transfer Section -->
+        <div class="transfer-section">
+          <h2>Transfer</h2>
+          <div class="account-info">
+            <label for="payer-account-select">Select Payer</label>
+            <select name="payer-account" id="payer-account-select">
+              <option value="checking">Checking account</option>
+              <!-- other account options -->
+            </select>
+            <div class="balance-info">
+              <p>Balance: <span class="balance-amount">CAD 5000.00</span></p>
+            </div>
+            <div class="iban-info">
+              <p>IBAN: <span class="iban-number">AB17 0000 0000 1111 1111</span></p>
+              <p>Account Owner: <span class="account-owner">John Doe</span></p>
+            </div>
+            <div class="saved-beneficiaries">
+                <div class="recent-activities-section">
+                    <h2>Recent Activities</h2>
+                    <table class="activities-table">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Beneficiary</th>
+                            <th>Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td data-label="Date">04 SEP</td>
+      <td data-label="Status" class="status-completed">Completed</td>
+      <td data-label="Beneficiary">Ben Jackson</td>
+      <td data-label="Amount">$150.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">16 SEP</td>
+                            <td data-label="Status" class="status-completed">Completed</td>
+                            <td data-label="Beneficiary">Erin Joe</td>
+                            <td data-label="Amount">$150.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">18 OCT</td>
+                            <td data-label="Status" class="status-completed">Completed</td>
+                            <td data-label="Beneficiary">Dana Miller</td>
+                            <td data-label="Amount">$50.00</td>
+                          </tr>
+                          <!-- ... more rows as per your data ... -->
+                          <tr>
+                            <td data-label="Date">29 NOV</td>
+                            <td data-label="Status" class="status-pending">Pending</td>
+                            <td data-label="Beneficiary">Kyle Dosie</td>
+                            <td data-label="Amount">$100.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">30 NOV</td>
+                            <td  data-label="Status" class="status-pending">Pending</td>
+                            <td data-label="Beneficiary">Dana Miller</td>
+                            <td data-label="Amount">$100.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">04 SEP</td>
+                            <td data-label="Status" class="status-completed">Completed</td>
+                            <td data-label="Beneficiary">Ben Jackson</td>
+                            <td data-label="Amount">$150.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">16 SEP</td>
+                            <td data-label="Status" class="status-completed">Completed</td>
+                            <td data-label="Beneficiary">Erin Joe</td>
+                            <td data-label="Amount">$150.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">18 OCT</td>
+                            <td data-label="Status" class="status-completed">Completed</td>
+                            <td data-label="Beneficiary">Dana Miller</td>
+                            <td data-label="Amount">$50.00</td>
+                          </tr>
+                          <!-- ... more rows as per your data ... -->
+                          <tr>
+                            <td data-label="Date">29 NOV</td>
+                            <td data-label="Status" class="status-pending">Pending</td>
+                            <td data-label="Beneficiary">Kyle Dosie</td>
+                            <td data-label="Amount">$100.00</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Date">30 NOV</td>
+                            <td data-label="Status" class="status-pending">Pending</td>
+                            <td data-label="Beneficiary">Dana Miller</td>
+                            <td data-label="Amount">$100.00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                  
+            </div>
+          </div>
+        </div>
+      
+        <!-- Transfer To Section -->
+        <div class="transfer-to-section">
+          <h2>Transfer To</h2>
+          <form id="transfer-form">
+            <div class="form-group">
+              <label for="beneficiary-iban">Beneficiary IBAN:</label>
+              <input type="text" id="beneficiary-iban" name="beneficiary-iban" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="amount">Amount:</label>
+              <input type="number" id="amount" name="amount" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="transfer-date">Date:</label>
+              <input type="date" id="transfer-date" name="transfer-date" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="transfer-purpose">Transfer Purpose:</label>
+              <input type="text" id="transfer-purpose" name="transfer-purpose">
+            </div>
+            
+            <div class="form-group">
+              <label for="beneficiary-name">Beneficiary's Name:</label>
+              <input type="text" id="beneficiary-name" name="beneficiary-name">
+            </div>
+      
+            <div class="form-group">
+              <label for="beneficiary-email">Beneficiary's Email:</label>
+              <input type="email" id="beneficiary-email" name="beneficiary-email">
+            </div>
+      
+            <div class="form-group">
+              <label for="payer-purpose">Payer's Purpose:</label>
+              <input type="text" id="payer-purpose" name="payer-purpose">
+            </div>
+            
+            <!-- Other fields... -->
+            
+            <input type="submit" value="Continue">
+          </form>
+        </div>
+        </div>
+        
+          
+                
+      </div>
+      
+    <!-- ... existing .transfer-container and its children ... -->
+
+<!-- Recent Activities Section -->
+
+        </div>
+
+        
+       <!-- Limit Sections Only -->
+
+       
+</body>
+</html>

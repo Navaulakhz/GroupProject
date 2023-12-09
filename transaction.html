@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="trastyle.css">
+    <title>Bank Dashboard</title>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="Logo_Transparent_White.png" alt="Crest Bank Corp Logo">
+            </div>
+            <nav class="navigation">
+                <a href="Index.html" class="nav-item active">Overview</a>
+                <a href="#" class="nav-item">Accounts</a>
+                <a href="transaction.html" class="nav-item">Transfers</a>
+                <a href="transaction.html" class="nav-item">Transactions</a>
+                <a href="investment.html" class="nav-item">Investments</a>
+                <a href="chat.html" class="nav-item">Contacts</a>
+                <a href="#" class="nav-item">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Transactions Section -->
+            <section class="transactions">
+                <h2>Transactions</h2>
+                <div class="transaction-filters">
+                    <button class="filter-btn active">History</button>
+                    <button class="filter-btn">Upcoming</button>
+                    <div class="month-picker">
+                        <span>September</span>
+                        <button class="month-nav prev-month"></button>
+                        <button class="month-nav next-month"></button>
+                    </div>
+                    <button class="add-transaction-btn">+</button>
+                </div>
+                <div class="transaction-list">
+                    <!-- Repeating Transaction Item -->
+                    <div class="transaction-item">
+                        <div class="transaction-date"></div>
+                        <div class="transaction-details">
+                            <div class="transaction-name">IKEA - Concord ON</div>
+                            <div class="transaction-account">1739 **** **** 1830</div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 06, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Starbucks - Toronto ON</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$4.50</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 10, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Amazon Purchase</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$120.99</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 12, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Gas Station</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$60.00</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 15, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Grocery Mart</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$80.25</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 20, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Netflix Subscription</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$15.99</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 22, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Electronics Store</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$220.45</div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-date">Sep 30, 2023</div>
+                                <div class="transaction-details">
+                                    <div class="transaction-name">Local Restaurant</div>
+                                    <div class="transaction-account">1739 **** **** 1830</div>
+                                </div>
+                                <div class="transaction-amount">-$45.90</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="transaction-amount">-$56.34</div>
+                    </div>
+                    <!-- More transaction items... -->
+                </div>
+            </section>
+
+            <!-- Credit Card Section -->
+             <section class="credit-card-info">
+                <h2>Credit Card</h2>
+                <div class="credit-card-details">
+                    <div class="credit-card-number">1739 **** **** ****</div>
+                    <div class="credit-card-owner">John Doe</div>
+                    <div class="credit-card-balance">
+                        Balance <span>$1500.00 CAD</span>
+                    </div>
+                    <div class="credit-card-max">
+                        Max Spending <span>$260.00 CAD</span>
+                    </div>
+                </div>
+               <!-- Monthly Status Section -->
+<section class="monthly-status">
+    <h2>Monthly Status</h2>
+    <table>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td><progress value="40" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td><progress value="60" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>March</td>
+                <td><progress value="80" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>April</td>
+                <td><progress value="55" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>May</td>
+                <td><progress value="70" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>June</td>
+                <td><progress value="20" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td><progress value="85" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>August</td>
+                <td><progress value="75" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>September</td>
+                <td><progress value="50" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>October</td>
+                <td><progress value="90" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>November</td>
+                <td><progress value="30" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>December</td>
+                <td><progress value="65" max="100"></progress></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+                
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

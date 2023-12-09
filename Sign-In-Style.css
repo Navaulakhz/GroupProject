@@ -1,0 +1,126 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif; /* or the font used in your design */
+    background-color: white; /* or the background color used in your design */
+}
+
+.container {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logo {
+  width: 15%;
+  height: 15%;
+}
+
+.header-buttons {
+    /* styles for header buttons */
+}
+
+.button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#login {
+    background-color: transparent;
+    color: #007bff;
+}
+
+#sign-up {
+    background-color: #007bff;
+}
+
+.main-content {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 10px;
+    
+}
+
+.sign-in-section {
+    background-color: #ffffff;
+    width: 50%;
+   
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-right: 10%; /* Adjust the spacing between the form and the illustration */
+    
+}
+
+.sign-in-section h1 {
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.sign-in-section .tagline {
+    color: #707070;
+    margin-bottom: 2rem;
+}
+
+#sign-in-form {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    padding: 30px;
+}
+
+#sign-in-form input {
+    padding: 30px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+   
+}
+
+.show-password {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#register {
+    width: 100%;
+    background-color: #f8f9fa;
+    color: #000;
+    margin-top: 1rem; /* Space above the register button */
+}
+
+.illustration-section {
+    float: left;
+    width: 50%;
+    margin-top: 0%;
+
+}
+#ill{
+    width: 90%;
+   
+}
+/* Responsive design and other styles */

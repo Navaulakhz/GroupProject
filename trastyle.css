@@ -1,0 +1,290 @@
+/* General Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Replace with your preferred font */
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #f4f7fa;
+    color: #333;
+    width: 250px;
+    height: 100vh;
+    float: left;
+    position: fixed;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    background-color: #233143;
+    color: #fff;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navigation {
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    background-color: #d3e0ea;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.transactions h2,
+.credit-card-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Transactions Styles */
+.transaction-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #233143;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn.active {
+    background-color: #506690;
+}
+
+.transaction-list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.transaction-details {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.transaction-name {
+    font-size: 16px;
+    color: #333;
+}
+
+.transaction-account {
+    font-size: 12px;
+    color: #999;
+}
+
+.transaction-amount {
+    font-size: 18px;
+    color: #e63946; /* Red for expenses, change for income */
+}
+
+/* Credit Card Section Styles */
+.credit-card-info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px; /* Adjust as needed for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: for slight shadow effect */
+    border: 1px solid #0b4a79; /* Optional: if you want a border around the card */
+    width: 55%;
+    position: left;
+    
+    
+    
+}
+
+.credit-card-details {
+    margin-bottom: 20px;
+}
+
+.credit-card-number,
+.credit-card-owner {
+    color: #506690;
+    margin-bottom: 5px;
+}
+
+.credit-card-balance,
+.credit-card-max {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Monthly Status Bar Styles */
+.monthly-status {
+    margin-top: 20px;
+}
+
+.status-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-month {
+    flex-basis: 25%;
+    padding-right: 10px;
+    color: #333;
+}
+
+.status-progress {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    display: block;
+    height: 100%;
+    background-color: #506690;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .navigation {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav-item {
+        padding: 10px;
+    }
+}
+
+/* ... other styles ... */
+
+/* Monthly Status Styles */
+.monthly-status h2 {
+    margin-bottom: 15px;
+    
+}
+
+.monthly-status table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.monthly-status td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+/* Style for the progress element */
+progress {
+    width: 100%;
+    -webkit-appearance: none; /* Override default appearance on WebKit browsers */
+    appearance: none; /* Override default appearance */
+}
+
+/* Style for the progress bar */
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #506690;
+    border-radius: 5px;
+}
+
+progress::-moz-progress-bar {
+    background-color: #506690;
+    border-radius: 5px;
+}
+
+/* Credit Card Section Styles */
+.credit-card-info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #0b4a79;
+    width: 100%; /* Adjusted for fluid width */
+    max-width: 500px; /* Optional: if you want to limit the maximum width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .credit-card-info {
+        /* Adjust styles for tablets */
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    /* Further adjustments as necessary */
+}
+
+@media (max-width: 768px) {
+    .credit-card-info {
+        /* Adjust styles for smaller tablets and large phones */
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Additional responsive adjustments */
+}
+
+/* ... other responsive adjustments ... */
